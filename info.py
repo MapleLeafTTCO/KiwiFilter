@@ -83,7 +83,7 @@ DELETE_TIME = int(environ.get('DELETE_TIME', 3600)) # Add time in seconds
 AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "False")), False)
 WELCOME = is_enabled((environ.get('WELCOME', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
-LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
+LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "True"), True)
 LINK_MODE = is_enabled(environ.get("LINK_MODE", "True"), True)
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 
@@ -91,12 +91,12 @@ CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", script.IMDB_TEMPLATE)
 FILE_CAPTION = environ.get("FILE_CAPTION", script.FILE_CAPTION)
 SHORTLINK_URL = environ.get("SHORTLINK_URL", "mdiskshortner.link")
-SHORTLINK_API = environ.get("SHORTLINK_API", "36f1ae74ba1aa01e5bd73bdd0bc22aa915443501")
+SHORTLINK_API = environ.get("SHORTLINK_API", "09ed681e7e71d0aabee755599b04f5646bfa0a4c")
 VERIFY_EXPIRE = int(environ.get('VERIFY_EXPIRE', 86400)) # Add time in seconds
 IS_VERIFY = is_enabled(environ.get("IS_VERIFY", "False"), False)
 WELCOME_TEXT = environ.get("WELCOME_TEXT", script.WELCOME_TEXT)
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/SL_Bots_Updates")
-INDEX_EXTENSIONS = [extensions.lower() for extensions in environ.get('INDEX_EXTENSIONS', 'mp4 mkv').split()]
+INDEX_EXTENSIONS = [extensions.lower() for extensions in environ.get('INDEX_EXTENSIONS', 'mkv mp4').split()]
 
 # stream features vars
 BIN_CHANNEL = environ.get("BIN_CHANNEL", "")
