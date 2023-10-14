@@ -135,32 +135,6 @@ async def get_main_cast_async(cast_list):
     return ', '.join(cast_list[:2]) if cast_list else ''
     main_cast = await get_main_cast_async(cast)
 
-formatted_template = IMDB_TEMPLATE.format(
-    query=query,
-    url=url,
-    title=title,
-    genres=genres,
-    year=year,
-    rating=rating,
-    votes=votes,
-    box_office=box_office,
-    release_date=release_date,
-    runtime=runtime,
-    languages=languages,
-    countries=countries,
-    certificates=certificates,
-    director=director,
-    writer=writer,
-    producer=producer,
-    composer=composer,
-    cinematographer=cinematographer,
-    music_team=music_team,
-    distributors=distributors,
-    plot=plot,
-    main_cast=main_cast,
-    poster=poster,
-    message=message
-)
 
 async def iter_messages(client, chat_id: Union[int, str], limit: int, offset: int = 0) -> Optional[AsyncGenerator["types.Message", None]]:
     """Iterate through a chat sequentially.
