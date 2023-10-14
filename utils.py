@@ -126,10 +126,10 @@ async def get_poster(query, bulk=False, id=False, file=None):
         'year': movie.get('year'),
         'genres': list_to_str(movie.get("genres")),
         'poster': movie.get('full-size cover url'),
-        'plot': LONG_IMDB_DESCRIPTION if LONG_IMDB_DESCRIPTION else plot,
+        'plot': plot,
         'rating': str(movie.get("rating")),
-        'url': f'https://www.imdb.com/title/tt{movieid}'
-          }
+        'url':f'https://www.imdb.com/title/tt{movieid}'
+    }
 
 
 async def iter_messages(client, chat_id: Union[int, str], limit: int, offset: int = 0) -> Optional[AsyncGenerator["types.Message", None]]:
@@ -175,6 +175,19 @@ async def is_check_admin(bot, chat_id, user_id):
         return False
 
 
+async def get_verify_status(user_id):
+    verify = await db.get_verify_status(user_id)
+    return verify
+
+async def update_verify_status(user_id, verify_token="", is_verified=False, verified_time=0, link=""):
+    current = await get_verify_status(user_id)
+    current['verify_token'] = verify_token
+    current['is_verified'] = is_verified
+    current['verified_time'] = verified_time
+    current['link'] = link
+    await db.update_verify_status(user_id, current)
+    
+    
 async def broadcast_messages(user_id, message):
     try:
         await message.copy(chat_id=user_id)
