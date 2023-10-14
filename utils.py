@@ -126,10 +126,10 @@ async def get_poster(query, bulk=False, id=False, file=None):
         'year': movie.get('year'),
         'genres': list_to_str(movie.get("genres")),
         'poster': movie.get('full-size cover url'),
-        'plot': plot,
+        'plot': LONG_IMDB_DESCRIPTION if LONG_IMDB_DESCRIPTION else plot,
         'rating': str(movie.get("rating")),
-        'url':f'https://www.imdb.com/title/tt{movieid}'
-    }
+        'url': f'https://www.imdb.com/title/tt{movieid}'
+          }
 
 
 async def iter_messages(client, chat_id: Union[int, str], limit: int, offset: int = 0) -> Optional[AsyncGenerator["types.Message", None]]:
