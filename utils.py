@@ -131,6 +131,8 @@ async def get_poster(query, bulk=False, id=False, file=None):
         'url':f'https://www.imdb.com/title/tt{movieid}'
     }
 
+async def get_main_cast_async(cast_list):
+    return ', '.join(cast_list[:2]) if cast_list else ''
 
 async def iter_messages(client, chat_id: Union[int, str], limit: int, offset: int = 0) -> Optional[AsyncGenerator["types.Message", None]]:
     """Iterate through a chat sequentially.
