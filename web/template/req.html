@@ -10,35 +10,30 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
-    
-        									 
-<style>
-      marquee{
-      font-size: 30px;
-      font-weight: 800;
-      color: Blue;
-      font-family: sans-serif;
-      }
-    </style>
+
     <style>
-      marquee{
-      font-size: 30px;
-      font-weight: 800;
-      color: Blue;
-      font-family: sans-serif;
-      }
+        /* Remove the marquee style for file-name */
+        #file-name {
+            font-size: 25px;
+            font-weight: 800;
+            color: darkred; /* Change color to dark red */
+            font-family: sans-serif;
+            text-align: center; /* Center-align the file name */
+        }
+
+        /* Add a new style for the footer */
+        footer {
+            background-color: lightblue; /* Set the background color to light blue */
+        }
     </style>
 </head>
 
 <body>
-	
     <header>
-        <marquee bgcolor="#f7f305"
-<div class="toogle"></div>
+        <!-- Remove marquee and unnecessary div -->
         <div id="file-name">
             %s
         </div>
-</marquee>
     </header>
 
     <div class="container">
@@ -46,35 +41,31 @@
     </div>
 
     <footer>
-	    <center><h4>Video not playing? Possibly because your browser or the player doesn't support codec. Please download and watch.</h4></center>
-	    
+        <center><h4>Video not playing? Possibly because your browser or the player doesn't support codec. Please download and watch.</h4></center>
     </footer>
+
     <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
-	<script>
+    <script>
         const controls = [
-              'play-large',
-              'rewind',
-              'play', 
-              'fast-forward', 
-              'progress', 
-              'current-time',
-              'duration',
-              'mute',
-              'volume',
-              'captions',
-              'settings',
-              'pip',
-              'airplay',
-              'download',
-              'fullscreen'
-            ];
+            'play-large',
+            'rewind',
+            'play',
+            'fast-forward',
+            'progress',
+            'current-time',
+            'duration',
+            'mute',
+            'volume',
+            'captions',
+            'settings',
+            'pip',
+            'airplay',
+            'download',
+            'fullscreen'
+        ];
         document.addEventListener('DOMContentLoaded', () => {
             const player = Plyr.setup('.player', { controls });
         });
-
-        const body = document.querySelector('body');
-        const footer = document.querySelector('footer');
-        const toogle = document.querySelector('.toogle');
     </script>
 </body>
 </html>
