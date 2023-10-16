@@ -12,25 +12,26 @@
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
 
     <style>
-        /* Remove the marquee style for file-name */
+        /* Remove the marquee style for file-name and add word-wrap */
         #file-name {
             font-size: 25px;
             font-weight: 800;
             color: darkred; /* Change color to dark red */
             font-family: sans-serif;
             text-align: center; /* Center-align the file name */
+            word-wrap: break-word; /* Allow the file name to wrap to the next line */
         }
 
-        /* Add a new style for the footer */
-        footer {
-            background-color: lightblue; /* Set the background color to light blue */
+        /* Change the header background color to light blue */
+        header {
+            background-color: lightblue;
+            padding: 10px; /* Add padding for better visibility */
         }
     </style>
 </head>
 
 <body>
     <header>
-        <!-- Remove marquee and unnecessary div -->
         <div id="file-name">
             %s
         </div>
